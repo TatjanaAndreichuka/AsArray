@@ -1,9 +1,8 @@
 package com.company;
-//import java.util.Arrays;
 
 public class arr2 {
     public static void main(String[] args) {
-        int[] newArray = {10, 4, -4, 7, 0, 9, 1, 3, 7, -5};
+        int[] newArray = {10, -4, -4, 7, 0, 9, 1, 3, 7, -5};
         negative(newArray);
         odd(newArray);
         everySecond(newArray);
@@ -44,27 +43,28 @@ public class arr2 {
             sum = sum + j;
         }
         double average = sum / newArray.length;
-        System.out.format("The average is: " + average + ".  ");
-        // System.out.println("The numbers smaller than the average are: ");
+        System.out.println("The average is: " + average);
         int countlessAv = 0;
         for (int lessAv : newArray) {
             if (lessAv < average)
                 countlessAv++;
         }
-        System.out.println("There are  " + countlessAv + "  numbers witch are smaller than average: ");
-        for (int j : newArray) {
-            if (j < average) {
-                System.out.println(j);
-            }
-        }
+        System.out.println("There are  " + countlessAv + "  numbers witch are smaller than average. ");
     }
 
     static void multipleEl(int[] newArray) {
-        for (int i = 0; i <= newArray.length; i++)
-            for (int j = i + 1; j <= newArray.length; j++) {
-                System.out.println((i == j) ? "There are equals" : "There are no multiple numbers");
+        for (int i = 0; i < newArray.length; i++)
+            for (int j = i + 1; i < newArray.length; i++) {
+                if (newArray[i] == newArray[j]) {
+                    System.out.println("There are equals for: " + newArray[i]);
+                } else {
+                    System.out.println("There are no equals for: " + newArray[i]);
+                }
+              //  newArray[i]++;
             }
-// How can I make it to print out only one answer? ((
     }
 }
+
+
+
 
